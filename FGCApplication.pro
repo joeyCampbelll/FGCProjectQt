@@ -11,10 +11,11 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    spreadsheetproperties.cpp
+    spreadsheet.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    spreadsheet.h
 
 FORMS += \
     mainwindow.ui
@@ -23,3 +24,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    spreadsheet.txt

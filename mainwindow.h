@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QDebug>
+#include "spreadsheet.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -33,5 +34,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    Spreadsheet spreadsheet;
 };
 #endif // MAINWINDOW_H
