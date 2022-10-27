@@ -17,6 +17,7 @@ public:
     ~MainWindow();
 
 private slots:
+    // ----- HOME PAGE METHODS -----
     void on_pushButton_SpeadsheetProperties_clicked();
 
     void on_pushButton_CreateFilters_clicked();
@@ -24,6 +25,11 @@ private slots:
     void on_pushButton_FilterHistory_clicked();
 
     void on_pushButton_SaveFilter_clicked();
+    // -----------------------------
+
+    // ----- SPREADSHEET PROPERTIES METHODS -----
+
+    // ------------------------------------------
 
 private:
     Ui::MainWindow *ui;

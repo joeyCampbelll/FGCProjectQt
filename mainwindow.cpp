@@ -15,14 +15,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-void MainWindow::on_pushButton_SpeadsheetProperties_clicked()
-{
-    qDebug() << "spreadsheet properties clicked..." << Qt::endl;
-    ui->stackedWidget->setCurrentIndex(1);
-}
-
-
 void MainWindow::on_pushButton_CreateFilters_clicked()
 {
     qDebug() << "create filters clicked..." << Qt::endl;
