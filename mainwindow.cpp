@@ -8,6 +8,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->setFixedSize(800, 525);
     ui->stackedWidget->setCurrentIndex(0);
+
+    this->spreadsheet = new Spreadsheet();
+    this->spreadsheet->getProperties();
 }
 
 MainWindow::~MainWindow()
@@ -18,7 +21,6 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_CreateFilters_clicked()
 {
     qDebug() << "create filters clicked..." << Qt::endl;
-
 }
 
 

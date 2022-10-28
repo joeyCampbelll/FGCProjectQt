@@ -34,6 +34,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    Spreadsheet spreadsheet;
+    Spreadsheet *spreadsheet;
 };
 #endif // MAINWINDOW_H
