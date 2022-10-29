@@ -1,6 +1,6 @@
 #ifndef SPREADSHEET_H
 #define SPREADSHEET_H
-
+#include "QString.h"
 class Spreadsheet
 {
 public:
@@ -18,6 +18,8 @@ public:
 private:
     int rowCount = 0;
     int colCount = 0;
+
+    QString toExcelCol(int colNum);
 };
 
 #endif // SPREADSHEET_H

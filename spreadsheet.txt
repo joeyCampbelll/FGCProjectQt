@@ -1,1 +1,8 @@
-test
+-- GENERAL DATA --
+rowCount -
+colCount -
+------------------
+
+-- COL DATA TYPE --
+
+-------------------
