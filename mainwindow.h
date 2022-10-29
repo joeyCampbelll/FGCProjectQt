@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QDebug>
+#include <QStandardItemModel>
 #include "spreadsheet.h"
 
 QT_BEGIN_NAMESPACE
@@ -28,12 +29,10 @@ private slots:
     void on_pushButton_SaveFilter_clicked();
     // -----------------------------
 
-    // ----- SPREADSHEET PROPERTIES METHODS -----
-
-    // ------------------------------------------
-
-private:
+    private:
     Ui::MainWindow *ui;
     Spreadsheet *spreadsheet;
+
+    QStandardItemModel *tableModel;
 };
 #endif // MAINWINDOW_H

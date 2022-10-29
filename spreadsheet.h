@@ -15,6 +15,9 @@ public:
     // debugging method to print spreadsheet properties
     void printProperties();
 
+    int getRowCount() { return rowCount; }
+    int getColCount () { return colCount; }
+
 private:
     int rowCount = 0;
     int colCount = 0;

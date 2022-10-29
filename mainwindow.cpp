@@ -9,8 +9,18 @@ MainWindow::MainWindow(QWidget *parent)
     this->setFixedSize(800, 525);
     ui->stackedWidget->setCurrentIndex(0);
 
+    // BUILD SPREADSHEET
     this->spreadsheet = new Spreadsheet();
     this->spreadsheet->getProperties();
+
+    this->spreadsheet->getColCount();
+
+    // creating model for spreadsheet tableview
+    this->tableModel = new QStandardItemModel(this->spreadsheet->getRowCount(),
+                                              this->spreadsheet->getColCount(),
+                                              this);
+    this->tableModel->setHorizontalHeaderItem(0, new QStandardItem("test\nA"));
+    ui->table_spreadsheet->setModel(this->tableModel);
 }
 
 MainWindow::~MainWindow()

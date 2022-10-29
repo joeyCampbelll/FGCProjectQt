@@ -8,7 +8,6 @@ Spreadsheet::Spreadsheet() {}
 void MainWindow::on_pushButton_SpeadsheetProperties_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
-
 }
 
 // This method accesses the spreadsheet.txt file and retrieves
