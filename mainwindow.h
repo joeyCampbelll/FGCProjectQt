@@ -32,7 +32,9 @@ private slots:
     private:
     Ui::MainWindow *ui;
     Spreadsheet *spreadsheet;
-
     QStandardItemModel *tableModel;
+
+    void buildSpreadsheet();
+    void buildCreateFilters();
 };
 #endif // MAINWINDOW_H

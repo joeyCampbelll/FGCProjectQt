@@ -30,7 +30,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="Home">
      <widget class="QWidget" name="horizontalLayoutWidget_2">
@@ -155,6 +155,41 @@
       <property name="text">
        <string>Col Count: </string>
       </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="CreateFilters">
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>110</y>
+        <width>271</width>
+        <height>391</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout"/>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>19</x>
+        <y>10</y>
+        <width>271</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="1">
+        <widget class="QComboBox" name="combo_ColumnDataType">
+         <property name="currentText">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QComboBox" name="combo_ColumnLetter"/>
+       </item>
+      </layout>
      </widget>
     </widget>
    </widget>

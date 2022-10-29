@@ -1,13 +1,30 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "spreadsheet.h"
-#include "QDir.h"
 
 Spreadsheet::Spreadsheet() {}
 
 void MainWindow::on_pushButton_SpeadsheetProperties_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::buildSpreadsheet()
+{
+    this->spreadsheet = new Spreadsheet();
+    this->spreadsheet->getProperties();
+
+    // creating model for spreadsheet tableview
+    this->tableModel = new QStandardItemModel(this->spreadsheet->getRowCount(),
+                                              this->spreadsheet->getColCount(),
+                                              this);
+    QVector<QString> tempVec = this->spreadsheet->getHeaders();
+    for (int i = 0; i < tempVec.length(); i++)
+    {
+        this->tableModel->setHorizontalHeaderItem(i, new QStandardItem(tempVec.at(i)));
+    }
+
+    ui->table_spreadsheet->setModel(this->tableModel);
 }
 
 // This method accesses the spreadsheet.txt file and retrieves
@@ -42,6 +59,15 @@ void Spreadsheet::getProperties()
         {
             this->colCount = line.split("-")[1].trimmed().toInt();
         }
+
+        if (line.startsWith("-- COL HEADERS --"))
+        {
+            for (int i = 0; i < this->colCount; i++)
+            {
+                this->headers.append(in.readLine());
+            }
+        }
+        qDebug() << this->headers;
     }
 }
 

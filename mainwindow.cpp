@@ -9,28 +9,16 @@ MainWindow::MainWindow(QWidget *parent)
     this->setFixedSize(800, 525);
     ui->stackedWidget->setCurrentIndex(0);
 
-    // BUILD SPREADSHEET
-    this->spreadsheet = new Spreadsheet();
-    this->spreadsheet->getProperties();
+    // BUILD SPREADSHEET - this code is in spreadsheet.cpp for organization
+    this->buildSpreadsheet();
 
-    this->spreadsheet->getColCount();
-
-    // creating model for spreadsheet tableview
-    this->tableModel = new QStandardItemModel(this->spreadsheet->getRowCount(),
-                                              this->spreadsheet->getColCount(),
-                                              this);
-    this->tableModel->setHorizontalHeaderItem(0, new QStandardItem("test\nA"));
-    ui->table_spreadsheet->setModel(this->tableModel);
+    // BUILD CREATE FILTERS
+    this->buildCreateFilters();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-}
-
-void MainWindow::on_pushButton_CreateFilters_clicked()
-{
-    qDebug() << "create filters clicked..." << Qt::endl;
 }
 
 

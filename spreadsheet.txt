@@ -2,3 +2,31 @@
 rowCount - 161
 colCount - 25
 ------------------
+
+-- COL HEADERS --
+Count
+Arbitary Reference Number
+New Faculty (fewer than 5)
+orig_id
+Last
+First
+Name
+Dept
+Chair
+Rank
+Gender
+Yrs Service by the end of 2018-19
+Yrs Service by the end of 2019-20
+Yrs Service by the end of 2020-2021
+Tenured
+Term Hired if not Fall
+2013-14 Committee (if last year on the committee)
+2014-15 Committee (if last year on the committee)
+2015-16 Committee(if last year on the committee)
+2016-17 Committee (if last year on the committee)
+2017-18 Committee (if last year on the committee)
+2018-19 Committee (if last year on the committee)
+Committee, 19-20
+Committee, 20-21
+Term End Date
+-----------------
