@@ -1,8 +1,4 @@
 -- GENERAL DATA --
-rowCount -
-colCount -
+rowCount - 161
+colCount - 25
 ------------------
-
--- COL DATA TYPE --
-
--------------------

@@ -34,10 +34,16 @@ void Spreadsheet::getProperties()
     while (!in.atEnd()) {
         QString line = in.readLine();
 
-//        qDebug() << "line: " << line;
+        if (line.startsWith("rowCount"))
+        {
+            this->rowCount = line.split("-")[1].trimmed().toInt();
+        }
+
+        if (line.startsWith("colCount"))
+        {
+            this->colCount = line.split("-")[1].trimmed().toInt();
+        }
     }
-
-
 }
 
 void Spreadsheet::printProperties()
