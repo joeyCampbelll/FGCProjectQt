@@ -5,7 +5,7 @@
 void MainWindow::on_pushButton_CreateFilters_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
-    this->filterAlgo = new FilterAlgo(this->spreadsheet->getRowCount(), this->spreadsheet->getColCount());
+    this->filterAlgo = new FilterAlgo(this->spreadsheet);
 }
 
 void MainWindow::buildCreateFilters()

@@ -2,13 +2,34 @@
 #include "spreadsheet.h"
 #include <QDebug>
 
-FilterAlgo::FilterAlgo(int rowCount, int colCount)
+FilterAlgo::FilterAlgo(Spreadsheet *spreadsheet)
 {
-    QString colLetter = Spreadsheet::toExcelLetter(colCount);
+    this->spreadsheet = spreadsheet;
+    this->rowCount = spreadsheet->getRowCount();
+    this->colCount = spreadsheet->getColCount();
 
-    this->filterString = "=FILTER(A2,";
-    this->filterString.append(colLetter + QString::number(rowCount) + ",");
+    this->addFilterComponent("Name", "keyword", "Joey", "+");
+}
 
-    qDebug() << filterString;
+void FilterAlgo::addFilterComponent(QString colName, QString colTargetType, QString target, QString conjunction)
+{
+    // A filter component looks something like:
+    // "(J2:J161 = "Associate")", "*(K2:K161 = "F")", or "+(L2:L161 > 10)"
+
+    //   colLetter: "J", "K", or "L"
+    //   rowRange: "J2:J161", "K2:K161", or "L2:L161"
+    //   target = "'Associate'", "'F'", or "> 10"
+    //   conjunction = "", "*", or "+"
+
+    int colIndex = this->spreadsheet->getColumnIndex(colName);
+    QString colLetter = Spreadsheet::toExcelLetter(colIndex);
+
+
+
+    this->filterMap.insert(colName, "test");
+}
+
+void FilterAlgo::buildFilter()
+{
 
 }

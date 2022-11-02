@@ -77,7 +77,6 @@ void Spreadsheet::printProperties()
 
 QString Spreadsheet::toExcelLetter(int num)
 {
-    num--;
     int digit1 = num % 26;
     int digit2 = num / 26;
 
@@ -88,4 +87,9 @@ QString Spreadsheet::toExcelLetter(int num)
     }
     result.push_back(digit1 + 'A');
     return result;
+}
+
+int Spreadsheet::getColumnIndex(QString headerName)
+{
+    return this->headers.indexOf(headerName);
 }

@@ -16,6 +16,11 @@ public:
     // debugging method to print spreadsheet properties
     void printProperties();
 
+    // takes in a header name, returns the corresponding column index
+    int getColumnIndex(QString headerName);
+
+    // takes in a number, returns the corresponding alphabet character
+    //   passed Z -> AA, AB, AC ... BA, BB, BC ... AAA, AAB
     static QString toExcelLetter(int num);
 
     int getRowCount() { return rowCount; }
