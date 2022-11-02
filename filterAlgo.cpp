@@ -21,15 +21,21 @@ void FilterAlgo::addFilterComponent(QString colName, QString colTargetType, QStr
     //   target = "'Associate'", "'F'", or "> 10"
     //   conjunction = "", "*", or "+"
 
-    int colIndex = this->spreadsheet->getColumnIndex(colName);
-    QString colLetter = Spreadsheet::toExcelLetter(colIndex);
+//    int colIndex = this->spreadsheet->getColumnIndex(colName);
+//    QString colLetter = Spreadsheet::toExcelLetter(colIndex);
 
 
-
-    this->filterMap.insert(colName, "test");
+    this->filterMap.insert(colName, target);
+    this->buildFilter();
 }
 
 void FilterAlgo::buildFilter()
 {
+    QString finalColLetter = Spreadsheet::toExcelLetter(this->colCount - 1);
 
+
+    this->filterString = "=FILTER(A2:";
+    this->filterString.append(finalColLetter + QString::number(this->rowCount) + ",");
+
+    qDebug() << filterString;
 }
