@@ -10,11 +10,13 @@ CONFIG += c++17
 
 SOURCES += \
     createfilters.cpp \
+    filterAlgo.cpp \
     main.cpp \
     mainwindow.cpp \
     spreadsheet.cpp
 
 HEADERS += \
+    filterAlgo.h \
     mainwindow.h \
     spreadsheet.h
 

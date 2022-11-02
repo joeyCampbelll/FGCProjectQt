@@ -5,6 +5,7 @@
 #include <QDebug>
 #include <QStandardItemModel>
 #include "spreadsheet.h"
+#include "filterAlgo.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -32,6 +33,7 @@ private slots:
     private:
     Ui::MainWindow *ui;
     Spreadsheet *spreadsheet;
+    FilterAlgo *filterAlgo;
     QStandardItemModel *tableModel;
 
     void buildSpreadsheet();

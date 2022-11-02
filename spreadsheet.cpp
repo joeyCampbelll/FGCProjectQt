@@ -67,7 +67,6 @@ void Spreadsheet::getProperties()
                 this->headers.append(in.readLine());
             }
         }
-        qDebug() << this->headers;
     }
 }
 
@@ -76,13 +75,14 @@ void Spreadsheet::printProperties()
     qDebug() << this->rowCount << Qt::endl << this->colCount;
 }
 
-QString Spreadsheet::toExcelCol(int colNum)
+QString Spreadsheet::toExcelLetter(int num)
 {
-    int digit1 = colNum % 26;
-    int digit2 = colNum / 26;
+    num--;
+    int digit1 = num % 26;
+    int digit2 = num / 26;
 
     QString result;
-    if (colNum > 26)
+    if (num > 26)
     {
         result.push_back(digit2 + 'A' - 1);
     }

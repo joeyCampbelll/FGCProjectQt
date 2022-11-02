@@ -16,6 +16,8 @@ public:
     // debugging method to print spreadsheet properties
     void printProperties();
 
+    static QString toExcelLetter(int num);
+
     int getRowCount() { return rowCount; }
     int getColCount () { return colCount; }
     QVector<QString> getHeaders() { return headers; }
@@ -24,7 +26,7 @@ private:
     int colCount = 0;
     QVector<QString> headers;
 
-    QString toExcelCol(int colNum);
+
 };
 
 #endif // SPREADSHEET_H
