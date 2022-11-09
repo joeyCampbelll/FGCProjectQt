@@ -30,7 +30,9 @@ private slots:
     void on_pushButton_SaveFilter_clicked();
     // -----------------------------
 
-    private:
+    void on_pushButton_BackToHome_clicked();
+
+private:
     Ui::MainWindow *ui;
     Spreadsheet *spreadsheet;
     FilterAlgo *filterAlgo;

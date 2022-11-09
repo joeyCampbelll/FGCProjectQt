@@ -30,7 +30,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Home">
      <widget class="QWidget" name="horizontalLayoutWidget_2">
@@ -154,6 +154,19 @@
       </property>
       <property name="text">
        <string>Col Count: </string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_BackToHome">
+      <property name="geometry">
+       <rect>
+        <x>680</x>
+        <y>20</y>
+        <width>83</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back</string>
       </property>
      </widget>
     </widget>

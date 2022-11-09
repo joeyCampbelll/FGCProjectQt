@@ -9,6 +9,11 @@ void MainWindow::on_pushButton_SpeadsheetProperties_clicked()
     ui->stackedWidget->setCurrentIndex(1);
 }
 
+void MainWindow::on_pushButton_BackToHome_clicked()
+{
+    this->ui->stackedWidget->setCurrentIndex(0);
+}
+
 void MainWindow::buildSpreadsheet()
 {
     this->spreadsheet = new Spreadsheet();

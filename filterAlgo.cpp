@@ -21,8 +21,8 @@ void FilterAlgo::addFilterComponent(QString colName, QString colTargetType, QStr
     //   target = "'Associate'", "'F'", or "> 10"
     //   conjunction = "", "*", or "+"
 
-//    int colIndex = this->spreadsheet->getColumnIndex(colName);
-//    QString colLetter = Spreadsheet::toExcelLetter(colIndex);
+    //    int colIndex = this->spreadsheet->getColumnIndex(colName);
+    //    QString colLetter = Spreadsheet::toExcelLetter(colIndex);
 
 
     this->filterMap.insert(colName, target);
