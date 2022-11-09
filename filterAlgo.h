@@ -1,9 +1,32 @@
 #ifndef FILTERALGO_H
 #define FILTERALGO_H
 #include <QString>
-#include <QHash>
+#include <QVector>
 #include "spreadsheet.h"
 
+class FilterComponent
+{
+public:
+    FilterComponent(QString colHeader, QString target)
+    {
+        this->colHeader = colHeader;
+        this->target = target;
+    }
+
+    QString getColHeader()
+    {
+        return colHeader;
+    }
+
+    QString getTarget()
+    {
+        return target;
+    }
+
+private:
+    QString colHeader;
+    QString target;
+};
 
 class FilterAlgo
 {
@@ -11,14 +34,14 @@ public:
     FilterAlgo(Spreadsheet *spreadsheet);
 
     void initializeFilter();
-    void addFilterComponent(QString colName, QString colTargetType, QString target, QString conjunction);
+    void addFilterComponent(QString colName, QString colTargetType, QString target);
     void buildFilter();
 
 private:
     Spreadsheet *spreadsheet;
 
     QString filterString;
-    QHash<QString, QString> filterMap;
+    QVector<FilterComponent*> filterVec;
 
     int rowCount;
     int colCount;
