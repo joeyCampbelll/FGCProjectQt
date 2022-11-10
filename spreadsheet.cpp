@@ -80,6 +80,12 @@ void Spreadsheet::printProperties()
     qDebug() << this->rowCount << Qt::endl << this->colCount;
 }
 
+int Spreadsheet::getColumnIndex(QString headerName)
+{
+    return this->headers.indexOf(headerName);
+}
+
+
 QString Spreadsheet::intToExcelLetter(int num)
 {
     int digit1 = num % 26;
@@ -94,7 +100,7 @@ QString Spreadsheet::intToExcelLetter(int num)
     return result;
 }
 
-int Spreadsheet::getColumnIndex(QString headerName)
+QString Spreadsheet::headerToExcelLetter(QString headerName)
 {
-    return this->headers.indexOf(headerName);
+    return intToExcelLetter(getColumnIndex(headerName));
 }

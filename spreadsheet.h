@@ -23,7 +23,7 @@ public:
     //   passed Z -> AA, AB, AC ... BA, BB, BC ... AAA, AAB
     static QString intToExcelLetter(int num);
 
-    static QString headerToExcelLetter(QString headerName);
+    QString headerToExcelLetter(QString headerName);
 
     int getRowCount() { return rowCount; }
     int getColCount () { return colCount; }
