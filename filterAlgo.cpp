@@ -8,24 +8,36 @@ FilterAlgo::FilterAlgo(Spreadsheet *spreadsheet)
     this->rowCount = spreadsheet->getRowCount();
     this->colCount = spreadsheet->getColCount();
 
-//    this->addFilterComponent("Name", "keyword", "Joey";
+    this->addFilterComponent("Name", "\"Joey\"");
+    this->addFilterComponent("Department", "\"Math\"");
+    this->addFilterComponent("Name", "\"James\"");
+    this->addFilterComponent("Name", "< 26");
 }
 
-void FilterAlgo::addFilterComponent(QString colHeader, QString colTargetType, QString target)
+void FilterAlgo::addFilterComponent(QString colHeader, QString target)
 {
-    // A filter component looks something like:
-    // "(J2:J161 = "Associate")", "*(K2:K161 = "F")", or "+(L2:L161 > 10)"
+    // We are assuming that the target has been formatted under these conditions:
+    //   - If (targetType == "keyword") -> "target in quotes" (ex. "Associate")
+    //   - If (targetType == "range") -> </> targetNum (ex. < 12 OR > 10)
 
-    //   colLetter: "J", "K", or "L"
-    //   rowRange: "J2:J161", "K2:K161", or "L2:L161"
-    //   target = "'Associate'", "'F'", or "> 10"
-    //   conjunction = "", "*", or "+"
+    // If the filterHash already has a filter for the given colHeader
+    if (filterHash.contains(colHeader))
+    {
+        // First, we get a copy of the component corresponding to the column
+        FilterComponent *tempComponent = filterHash.value(colHeader);
+        // Second, we add the target onto this copy
+        tempComponent->addTarget(target);
+        // Third, we insert to replace the copy
+        filterHash.insert(colHeader, tempComponent);
+    }
+    // If the filterHash does not have a filter for the given colHeader
+    else
+    {
+        filterHash.insert(colHeader, new FilterComponent(colHeader, target));
+    }
 
-    //    int colIndex = this->spreadsheet->getColumnIndex(colName);
-    //    QString colLetter = Spreadsheet::toExcelLetter(colIndex);
 
-
-    this->filterVec.append(new FilterComponent(colHeader, target));
+    // now that a filter has been added, we want to reconstruct the filterString
     this->buildFilter();
 }
 
@@ -37,16 +49,28 @@ void FilterAlgo::buildFilter()
     this->filterString = "=FILTER(A2:";
     this->filterString.append(finalColLetter + QString::number(this->rowCount) + ",");
 
-    QVector<QString> filterStrings;
+    printFilterHash();
+}
 
-    for (int i = 0; i < filterVec.size(); i++)
+void FilterAlgo::printFilterHash()
+{
+    QString test = "\"Name\"";
+    qDebug() << QString(test).toUtf8().constData();
+    qDebug() << " -------------------------------------------- ";
+    QHashIterator<QString, FilterComponent*> i(filterHash);
+
+    while (i.hasNext())
     {
-        QString currColHeader = filterVec.at(i)->getColHeader();
-        QString currTarget = filterVec.at(i)->getTarget();
-
-        if (i == 0)
+        i.next();
+        QString temp = "| ";
+        foreach(QString s, i.value()->getTargets())
         {
+            temp.append(s + " | ");
         }
+
+        qDebug() << QString(i.key()).toUtf8().constData() << ": [" << QString(temp).toUtf8().constData() << "]";
     }
-    qDebug() << filterString;
+
+    qDebug() << " -------------------------------------------- ";
+
 }
