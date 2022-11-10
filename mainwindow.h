@@ -32,6 +32,8 @@ private slots:
 
     void on_pushButton_BackToHome_clicked();
 
+    void on_pushButton_BackFromCreateFilters_clicked();
+
 private:
     Ui::MainWindow *ui;
     Spreadsheet *spreadsheet;
