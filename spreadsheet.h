@@ -21,7 +21,9 @@ public:
 
     // takes in a number, returns the corresponding alphabet character
     //   passed Z -> AA, AB, AC ... BA, BB, BC ... AAA, AAB
-    static QString toExcelLetter(int num);
+    static QString intToExcelLetter(int num);
+
+    static QString headerToExcelLetter(QString headerName);
 
     int getRowCount() { return rowCount; }
     int getColCount () { return colCount; }

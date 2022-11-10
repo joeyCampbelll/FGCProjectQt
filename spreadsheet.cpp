@@ -80,7 +80,7 @@ void Spreadsheet::printProperties()
     qDebug() << this->rowCount << Qt::endl << this->colCount;
 }
 
-QString Spreadsheet::toExcelLetter(int num)
+QString Spreadsheet::intToExcelLetter(int num)
 {
     int digit1 = num % 26;
     int digit2 = num / 26;

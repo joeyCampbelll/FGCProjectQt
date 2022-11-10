@@ -36,26 +36,22 @@ void FilterAlgo::addFilterComponent(QString colHeader, QString target)
         filterHash.insert(colHeader, new FilterComponent(colHeader, target));
     }
 
-
     // now that a filter has been added, we want to reconstruct the filterString
     this->buildFilter();
 }
 
 void FilterAlgo::buildFilter()
 {
-    QString finalColLetter = Spreadsheet::toExcelLetter(this->colCount - 1);
-
+    QString finalColLetter = Spreadsheet::intToExcelLetter(this->colCount - 1);
 
     this->filterString = "=FILTER(A2:";
     this->filterString.append(finalColLetter + QString::number(this->rowCount) + ",");
 
-    printFilterHash();
+
 }
 
 void FilterAlgo::printFilterHash()
 {
-    QString test = "\"Name\"";
-    qDebug() << QString(test).toUtf8().constData();
     qDebug() << " -------------------------------------------- ";
     QHashIterator<QString, FilterComponent*> i(filterHash);
 
