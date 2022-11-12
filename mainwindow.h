@@ -55,6 +55,10 @@ private slots:
 
     void on_pushButton_EnterKeyword_clicked();
 
+    void on_radioButton_GreaterThan_clicked();
+
+    void on_radioButton_LessThan_clicked();
+
 private:
     Ui::MainWindow *ui;
     Spreadsheet *spreadsheet;
