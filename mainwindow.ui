@@ -228,7 +228,7 @@
        <rect>
         <x>50</x>
         <y>310</y>
-        <width>271</width>
+        <width>297</width>
         <height>80</height>
        </rect>
       </property>
@@ -287,6 +287,9 @@
           <widget class="QSpinBox" name="spinBox_RangeValue">
            <property name="enabled">
             <bool>false</bool>
+           </property>
+           <property name="maximum">
+            <number>10000000</number>
            </property>
           </widget>
          </item>

@@ -59,6 +59,10 @@ private slots:
 
     void on_radioButton_LessThan_clicked();
 
+    void on_pushButton_EnterRange_clicked();
+
+    void on_spinBox_RangeValue_textChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     Spreadsheet *spreadsheet;

@@ -18,6 +18,7 @@ void MainWindow::on_pushButton_CreateFilters_clicked()
     }
 
     ui->combo_ColumnHeader->setCurrentIndex(-1);
+    ui->textEdit_FilterPreview->clear();
     createFiltersDisableAll();
 }
 
@@ -69,7 +70,6 @@ void MainWindow::on_radioButton_RangeSearch_clicked()
 {
     ui->radioButton_GreaterThan->setEnabled(true);
     ui->radioButton_LessThan->setEnabled(true);
-    ui->pushButton_EnterRange->setEnabled(true);
 
     // disable keyword search radio button
     ui->radioButton_KeywordSearch->setAutoExclusive(false);
@@ -116,13 +116,38 @@ void MainWindow::on_pushButton_EnterKeyword_clicked()
 void MainWindow::on_radioButton_GreaterThan_clicked()
 {
     ui->spinBox_RangeValue->setEnabled(true);
+    ui->pushButton_EnterRange->setEnabled(true);
 }
 
 void MainWindow::on_radioButton_LessThan_clicked()
 {
     ui->spinBox_RangeValue->setEnabled(true);
+    ui->pushButton_EnterRange->setEnabled(true);
 }
 
+void MainWindow::on_spinBox_RangeValue_textChanged(const QString &arg1)
+{
+    ui->pushButton_EnterRange->setEnabled(true);
+}
+
+void MainWindow::on_pushButton_EnterRange_clicked()
+{
+    QString rangeTarget = "";
+    if (ui->radioButton_GreaterThan->isChecked())
+    {
+        rangeTarget.append("> ");
+    }
+    else if (ui->radioButton_LessThan->isChecked())
+    {
+        rangeTarget.append("< ");
+    }
+
+    rangeTarget.append(QString::number(ui->spinBox_RangeValue->value()));
+
+    this->filterAlgo->setTargetCreateFilters(rangeTarget);
+
+    createFiltersUpdateFilter();
+}
 // ------------------------------------------
 
 void MainWindow::createFiltersUpdateFilter()
