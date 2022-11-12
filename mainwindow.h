@@ -30,9 +30,30 @@ private slots:
     void on_pushButton_SaveFilter_clicked();
     // -----------------------------
 
+    // ----- SPREADSHEET PROPERTIES METHODS -----
     void on_pushButton_BackToHome_clicked();
+    // ------------------------------------------
+
+    // ----- CREATE FILTERS METHODS -----
 
     void on_pushButton_BackFromCreateFilters_clicked();
+
+    void on_combo_ColumnHeader_activated(int index);
+
+    void createFiltersDisableAll();
+
+    void createFiltersUpdateFilter();
+
+    void on_radioButton_KeywordSearch_clicked();
+
+    void on_radioButton_RangeSearch_clicked();
+    // ----------------------------------
+
+
+
+    void on_lineEdit_KeywordEntry_returnPressed();
+
+    void on_pushButton_EnterKeyword_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -41,6 +62,5 @@ private:
     QStandardItemModel *tableModel;
 
     void buildSpreadsheet();
-    void buildCreateFilters();
 };
 #endif // MAINWINDOW_H

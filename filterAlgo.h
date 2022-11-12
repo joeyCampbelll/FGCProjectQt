@@ -14,7 +14,6 @@ public:
         this->targets.append(initialTarget);
     }
 
-
     QString getColHeader() { return colHeader; }
 
     QVector<QString> getTargets() { return targets; }
@@ -35,19 +34,25 @@ public:
     FilterAlgo(Spreadsheet *spreadsheet);
 
     void initializeFilter();
+    void filterStart();
     void addFilterComponent(QString colHeader, QString target);
     void buildFilter();
     void printFilterHash();
 
+    void setColHeaderCreateFilters(QString colHeader) { this->colHeaderCreateFilters = colHeader; }
+    void setTargetCreateFilters(QString target) { this->targetCreateFilters = target; }
+
+    QString getFilterString() { return this->filterString; }
+
 private:
     Spreadsheet *spreadsheet;
-
     QString filterString;
-//    QVector<FilterComponent*> filterVec;
-
     QHash<QString, FilterComponent*> filterHash;
 
     int rowCount;
     int colCount;
+
+    QString colHeaderCreateFilters;
+    QString targetCreateFilters;
 };
 #endif // FILTERALGO_H

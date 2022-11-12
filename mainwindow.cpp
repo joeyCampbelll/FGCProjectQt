@@ -12,8 +12,6 @@ MainWindow::MainWindow(QWidget *parent)
     // BUILD SPREADSHEET - this code is in spreadsheet.cpp for organization
     this->buildSpreadsheet();
 
-    // BUILD CREATE FILTERS
-    this->buildCreateFilters();
 }
 
 MainWindow::~MainWindow()
@@ -28,12 +26,7 @@ void MainWindow::on_pushButton_FilterHistory_clicked()
 
 }
 
-
 void MainWindow::on_pushButton_SaveFilter_clicked()
 {
     qDebug() << "save filter clicked..." << Qt::endl;
 }
-
-
-
-

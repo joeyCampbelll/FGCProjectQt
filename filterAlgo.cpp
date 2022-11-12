@@ -8,16 +8,21 @@ FilterAlgo::FilterAlgo(Spreadsheet *spreadsheet)
     this->rowCount = spreadsheet->getRowCount();
     this->colCount = spreadsheet->getColCount();
 
-    this->addFilterComponent("Rank", "= \"Full\"");
-    this->addFilterComponent("Dept", "= \"Mathematics/Computer Science\"");
-    this->addFilterComponent("Dept", "= \"MICS\"");
-    this->addFilterComponent("Rank", "= \"Associate\"");
+//    this->addFilterComponent("Rank", "= \"Full\"");
+//    this->addFilterComponent("Dept", "= \"Mathematics/Computer Science\"");
+//    this->addFilterComponent("Dept", "= \"MICS\"");
+//    this->addFilterComponent("Rank", "= \"Associate\"");
 
 //    this->addFilterComponent("Name", " = \"Morgan Professor 22\"");
 //    this->addFilterComponent("Name", " = \"Luke Professor 1\"");
 
 //    this->addFilterComponent("Name", "< 26");
 
+}
+
+void FilterAlgo::filterStart()
+{
+    addFilterComponent(this->colHeaderCreateFilters, this->targetCreateFilters);
 }
 
 void FilterAlgo::addFilterComponent(QString colHeader, QString target)
@@ -105,7 +110,7 @@ void FilterAlgo::buildFilter()
         }
     }
 
-    qDebug() << QString(this->filterString).toUtf8().constData();
+//    qDebug() << QString(this->filterString).toUtf8().constData();
 }
 
 void FilterAlgo::printFilterHash()
