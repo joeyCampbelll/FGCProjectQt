@@ -65,8 +65,9 @@ void FilterAlgo::buildFilter()
     QString finalRowNumber = QString::number(this->rowCount);
     this->filterString = "=FILTER(A2:";
     this->filterString.append(finalColLetter + finalRowNumber + ", ");
-    // -----------------------------------------
 
+    this->readableFilterString = "";
+    // -----------------------------------------
 
     QHashIterator<QString, FilterComponent*> i(filterHash);
     while (i.hasNext())
@@ -80,6 +81,8 @@ void FilterAlgo::buildFilter()
         // ex. E2:E161
         QString currColRange = currColLetter + "2:" + currColLetter + finalRowNumber;
 
+        this->readableFilterString.append(currColName + " -> [ ");
+
         // If the column has multiple targets (i.e. multiple keywords)
         if (i.value()->getTargets().size() > 1)
         {
@@ -87,21 +90,26 @@ void FilterAlgo::buildFilter()
             foreach(QString target, i.value()->getTargets())
             {
                 this->filterString.append("(" + currColRange + " " + target + ") + ");
+                this->readableFilterString.append(target + " OR ");
             }
-            filterString.remove(filterString.length() - 3, filterString.length());
+            this->filterString.remove(filterString.length() - 3, filterString.length());
+            this->filterString.append(")");
 
-            filterString.append(")");
+            this->readableFilterString.remove(readableFilterString.length() - 3, filterString.length());
+            this->readableFilterString.append(" ]");
         }
         // if the column has only one target
         else
         {
             this->filterString.append("(" + currColRange + " " + i.value()->getTargets().at(0) + ")");
+            this->readableFilterString.append(i.value()->getTargets().at(0) + " ]");
         }
 
         // If i.hasNext() == true, then there is another filter to be added on
         if (i.hasNext())
         {
             this->filterString.append(" * ");
+            this->readableFilterString.append("\nAND\n");
         }
         // If i.hasNext() == false, we close the filter by adding a ', "")' to the end
         else

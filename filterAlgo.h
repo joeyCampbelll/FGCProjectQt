@@ -43,10 +43,12 @@ public:
     void setTargetCreateFilters(QString target) { this->targetCreateFilters = target; }
 
     QString getFilterString() { return this->filterString; }
+    QString getreadableFilterString() { return this->readableFilterString; }
 
 private:
     Spreadsheet *spreadsheet;
     QString filterString;
+    QString readableFilterString;
     QHash<QString, FilterComponent*> filterHash;
 
     int rowCount;

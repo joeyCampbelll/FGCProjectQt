@@ -150,12 +150,21 @@ void MainWindow::on_pushButton_EnterRange_clicked()
 }
 // ------------------------------------------
 
+// ----- GENERAL FUNCTIONS ------
+
+void MainWindow::on_pushButton_ClearFilter_clicked()
+{
+    on_pushButton_CreateFilters_clicked();
+}
+
+// --------------------------------------------
+
 void MainWindow::createFiltersUpdateFilter()
 {
     this->filterAlgo->filterStart();
 
     ui->textEdit_FilterPreview->clear();
-    ui->textEdit_FilterPreview->insertPlainText(this->filterAlgo->getFilterString());
+    ui->textEdit_FilterPreview->insertPlainText(this->filterAlgo->getreadableFilterString() + "\n\n" + this->filterAlgo->getFilterString());
 
     ui->combo_ColumnHeader->setCurrentIndex(-1);
     createFiltersDisableAll();

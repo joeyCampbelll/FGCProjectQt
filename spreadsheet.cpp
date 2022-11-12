@@ -85,7 +85,6 @@ int Spreadsheet::getColumnIndex(QString headerName)
     return this->headers.indexOf(headerName);
 }
 
-
 QString Spreadsheet::intToExcelLetter(int num)
 {
     int digit1 = num % 26;

@@ -63,6 +63,8 @@ private slots:
 
     void on_spinBox_RangeValue_textChanged(const QString &arg1);
 
+    void on_pushButton_ClearFilter_clicked();
+
 private:
     Ui::MainWindow *ui;
     Spreadsheet *spreadsheet;
