@@ -45,6 +45,8 @@ public:
     QString getFilterString() { return this->filterString; }
     QString getreadableFilterString() { return this->readableFilterString; }
 
+    bool getHasFilterBeenAdded() { return this->hasFilterBeenAdded; }
+
 private:
     Spreadsheet *spreadsheet;
     QString filterString;
@@ -56,5 +58,7 @@ private:
 
     QString colHeaderCreateFilters;
     QString targetCreateFilters;
+
+    bool hasFilterBeenAdded = false;
 };
 #endif // FILTERALGO_H

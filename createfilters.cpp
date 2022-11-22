@@ -24,7 +24,20 @@ void MainWindow::on_pushButton_CreateFilters_clicked()
 
 void MainWindow::on_pushButton_BackFromCreateFilters_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(0);
+    if (this->filterAlgo->getHasFilterBeenAdded() == true)
+    {
+        QMessageBox::StandardButton reply;
+        reply = QMessageBox::question(this, "Back to main menu", "Are you sure you want to leave the filter before saving?",
+                                      QMessageBox::Yes|QMessageBox::No);
+        if (reply == QMessageBox::Yes)
+        {
+             ui->stackedWidget->setCurrentIndex(0);
+        }
+    }
+    else
+    {
+        ui->stackedWidget->setCurrentIndex(0);
+    }
 }
 
 // ----- COLUMN HEADER GROUP METHODS ------
@@ -154,7 +167,16 @@ void MainWindow::on_pushButton_EnterRange_clicked()
 
 void MainWindow::on_pushButton_ClearFilter_clicked()
 {
-    on_pushButton_CreateFilters_clicked();
+    if (this->filterAlgo->getHasFilterBeenAdded() == true)
+    {
+        QMessageBox::StandardButton reply;
+        reply = QMessageBox::question(this, "Clear Filter", "Are you sure you want to clear the filter?",
+                                      QMessageBox::Yes|QMessageBox::No);
+        if (reply == QMessageBox::Yes)
+        {
+          on_pushButton_CreateFilters_clicked();
+        }
+    }
 }
 
 // --------------------------------------------

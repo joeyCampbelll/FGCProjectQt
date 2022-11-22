@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QDebug>
+#include <QMessageBox>
 #include <QStandardItemModel>
 #include "spreadsheet.h"
 #include "filterAlgo.h"

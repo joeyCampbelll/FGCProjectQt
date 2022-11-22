@@ -16,6 +16,8 @@ void FilterAlgo::filterStart()
 
 void FilterAlgo::addFilterComponent(QString colHeader, QString target)
 {
+    this->hasFilterBeenAdded = true;
+
     // We are assuming that the target has been formatted under these conditions:
     //   - If (targetType == "keyword") -> "target in quotes" (ex. "= "Associate"")
     //   - If (targetType == "range") -> </> targetNum (ex. < 12 OR > 10)
