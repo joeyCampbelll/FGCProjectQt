@@ -105,19 +105,6 @@
        <string>Create Filter</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_SaveFilter">
-      <property name="geometry">
-       <rect>
-        <x>630</x>
-        <y>460</y>
-        <width>140</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Save Filter</string>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="SpreadsheetProperties">
      <widget class="QTableView" name="table_spreadsheet">
@@ -394,14 +381,27 @@
      <widget class="QPushButton" name="pushButton_ClearFilter">
       <property name="geometry">
        <rect>
-        <x>670</x>
+        <x>612</x>
         <y>400</y>
-        <width>83</width>
+        <width>141</width>
         <height>29</height>
        </rect>
       </property>
       <property name="text">
-       <string>Clear</string>
+       <string>Clear Current Filter</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_SaveFilter">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>400</y>
+        <width>141</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save Current Filter</string>
       </property>
      </widget>
     </widget>

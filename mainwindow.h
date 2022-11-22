@@ -70,7 +70,8 @@ private:
     Ui::MainWindow *ui;
     Spreadsheet *spreadsheet;
     FilterAlgo *filterAlgo;
-    QStandardItemModel *tableModel;
+    FilterFinal *filterFinal;
+    QStandardItemModel *spreadsheetTableModel;
 
     void buildSpreadsheet();
 };

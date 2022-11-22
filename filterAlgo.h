@@ -3,7 +3,26 @@
 #include <QString>
 #include <QVector>
 #include <QHash>
+#include <QDate>
 #include "spreadsheet.h"
+
+class FilterFinal
+{
+public:
+    FilterFinal(QString filterName, QDate filterDate, QString filterString, QString readableFilterString)
+    {
+        this->filterName = filterName;
+        this->filterDate = filterDate;
+        this->filterString = filterString;
+        this->readableFilterString = readableFilterString;
+    }
+
+private:
+    QString filterName;
+    QDate filterDate;
+    QString filterString;
+    QString readableFilterString;
+};
 
 class FilterComponent
 {

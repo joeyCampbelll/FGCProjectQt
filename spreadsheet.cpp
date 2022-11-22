@@ -20,16 +20,16 @@ void MainWindow::buildSpreadsheet()
     this->spreadsheet->getProperties();
 
     // creating model for spreadsheet tableview
-    this->tableModel = new QStandardItemModel(this->spreadsheet->getRowCount(),
+    this->spreadsheetTableModel = new QStandardItemModel(this->spreadsheet->getRowCount(),
                                               this->spreadsheet->getColCount(),
                                               this);
     QVector<QString> tempVec = this->spreadsheet->getHeaders();
     for (int i = 0; i < tempVec.length(); i++)
     {
-        this->tableModel->setHorizontalHeaderItem(i, new QStandardItem(tempVec.at(i)));
+        this->spreadsheetTableModel->setHorizontalHeaderItem(i, new QStandardItem(tempVec.at(i)));
     }
 
-    ui->table_spreadsheet->setModel(this->tableModel);
+    ui->table_spreadsheet->setModel(this->spreadsheetTableModel);
 }
 
 // This method accesses the spreadsheet.txt file and retrieves

@@ -25,10 +25,3 @@ void MainWindow::on_pushButton_FilterHistory_clicked()
     qDebug() << "filter history clicked..." << Qt::endl;
 
 }
-
-void MainWindow::on_pushButton_SaveFilter_clicked()
-{
-    qDebug() << "save filter clicked..." << Qt::endl;
-}
-
-
