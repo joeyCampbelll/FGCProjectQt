@@ -52,7 +52,8 @@ void Spreadsheet::getProperties()
     }
 
     QTextStream in(&file);
-    while (!in.atEnd()) {
+    while (!in.atEnd())
+    {
         QString line = in.readLine();
 
         if (line.startsWith("rowCount"))

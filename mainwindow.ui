@@ -30,7 +30,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="Home">
      <widget class="QWidget" name="horizontalLayoutWidget_2">
@@ -402,6 +402,31 @@
       </property>
       <property name="text">
        <string>Save Filter and Exit</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="FilterHistory">
+     <widget class="QTableView" name="tableView_FilterHistory">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>80</y>
+        <width>701</width>
+        <height>411</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_BackFromFilterHistory">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>10</y>
+        <width>83</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back</string>
       </property>
      </widget>
     </widget>

@@ -36,7 +36,6 @@ private slots:
     // ------------------------------------------
 
     // ----- CREATE FILTERS METHODS -----
-
     void on_pushButton_BackFromCreateFilters_clicked();
 
     void on_combo_ColumnHeader_activated(int index);
@@ -48,9 +47,6 @@ private slots:
     void on_radioButton_KeywordSearch_clicked();
 
     void on_radioButton_RangeSearch_clicked();
-    // ----------------------------------
-
-
 
     void on_lineEdit_KeywordEntry_returnPressed();
 
@@ -65,6 +61,18 @@ private slots:
     void on_spinBox_RangeValue_textChanged(const QString &arg1);
 
     void on_pushButton_ClearFilter_clicked();
+
+    // ----------------------------------
+
+    // ----- FILTER HISTORY METHODS -----
+    void on_pushButton_BackFromFilterHistory_clicked();
+
+    void prepareFilterHistoryTableView();
+
+    void parseFilterHistoryFile();
+
+    // ----------------------------------
+
 
 private:
     Ui::MainWindow *ui;

@@ -18,10 +18,3 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
-
-void MainWindow::on_pushButton_FilterHistory_clicked()
-{
-    qDebug() << "filter history clicked..." << Qt::endl;
-
-}

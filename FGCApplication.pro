@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     createfilters.cpp \
     filterAlgo.cpp \
+    filterhistory.cpp \
     main.cpp \
     mainwindow.cpp \
     spreadsheet.cpp
