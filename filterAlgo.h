@@ -9,19 +9,17 @@
 class FilterFinal
 {
 public:
-    FilterFinal(QString filterName, QDate filterDate, QString filterString, QString readableFilterString)
+    FilterFinal(QString filterName, QDate filterDate, QString filterString)
     {
         this->filterName = filterName;
         this->filterDate = filterDate;
         this->filterString = filterString;
-        this->readableFilterString = readableFilterString;
     }
 
 private:
     QString filterName;
     QDate filterDate;
     QString filterString;
-    QString readableFilterString;
 };
 
 class FilterComponent

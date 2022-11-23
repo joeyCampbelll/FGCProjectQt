@@ -30,7 +30,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="Home">
      <widget class="QWidget" name="horizontalLayoutWidget_2">
@@ -44,10 +44,10 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QPlainTextEdit" name="plainTextEdit"/>
+        <widget class="QPlainTextEdit" name="textEdit_ReadableFilter"/>
        </item>
        <item>
-        <widget class="QPlainTextEdit" name="plainTextEdit_2"/>
+        <widget class="QPlainTextEdit" name="textEdit_ActualFilter"/>
        </item>
       </layout>
      </widget>
@@ -401,7 +401,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Save Current Filter</string>
+       <string>Save Filter and Exit</string>
       </property>
      </widget>
     </widget>

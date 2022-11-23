@@ -1,1 +1,1 @@
-asdf
+| asf | Tue Nov 22 2022 | =FILTER(A2:Y161, (D2:D161 = "asdf"), "")|

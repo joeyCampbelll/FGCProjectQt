@@ -13,6 +13,9 @@ void MainWindow::on_pushButton_CreateFilters_clicked()
 
     // Populate the colHeaders combobox
     QVector<QString> colHeaders = this->spreadsheet->getHeaders();
+
+    ui->combo_ColumnHeader->clear();
+
     foreach(QString header, colHeaders)
     {
         ui->combo_ColumnHeader->addItem(header);
@@ -58,22 +61,46 @@ void MainWindow::on_pushButton_ClearFilter_clicked()
 
 void MainWindow::on_pushButton_SaveFilter_clicked()
 {
+    // if there is no filter to save, don't do anything
     if (this->filterAlgo->getHasFilterBeenAdded() == false)
     {
         return;
     }
 
+    // get the filter name through the input dialog box
     QString filterName = QInputDialog::getText(this,"Name","Enter a filter name...");
 
+    // if the user doesn't enter anything, call it <no name>
     if (filterName == "")
     {
         filterName = "<no name>";
     }
 
+    // get current date and make a FilterFinal object
     QDate currentDate = QDate::currentDate();
-    this->filterFinal = new FilterFinal(filterName, currentDate, this->filterAlgo->getFilterString(), this->filterAlgo->getreadableFilterString());
+    this->filterFinal = new FilterFinal(filterName, currentDate, this->filterAlgo->getFilterString());
 
-    ui->stackedWidget->setCurrentIndex(2);
+    // ---- WRITING TO SAVE FILE ----
+    QString filePath = qApp->applicationDirPath();
+    filePath = filePath.mid(0, filePath.indexOf("FGCProjectQt")).append("FGCProjectQt/FGCApplication/filterhistory.txt");
+
+    QFile file(filePath);
+
+    if (!file.exists())
+    {
+        qDebug() << "File not found";
+    }
+
+    if (!file.open(QIODevice::ReadWrite | QIODevice::Append))
+    {
+       return;
+    }
+
+    QTextStream out(&file);
+
+    out << "| " << filterName << " | " << currentDate.toString() << " | " << this->filterAlgo->getFilterString() << " |\n";
+
+    ui->stackedWidget->setCurrentIndex(0);
 }
 // --------------------------------------------
 
