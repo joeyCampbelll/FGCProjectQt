@@ -1,1 +1,3 @@
-| asf | Tue Nov 22 2022 | =FILTER(A2:Y161, (D2:D161 = "asdf"), "")|
+| asf | Tue Nov 22 2022 | =FILTER(A2:Y161, (D2:D161 = "asdf"), "") |
+| dsf | Tue Nov 22 2022 | =FILTER(A2:Y161, (G2:G161 > 5) * (F2:F161 = "asf"), "") |
+| name search | Tue Nov 22 2022 | =FILTER(A2:Y161, (G2:G161 = "joey"), "") |

@@ -60,7 +60,7 @@ public:
     void setTargetCreateFilters(QString target) { this->targetCreateFilters = target; }
 
     QString getFilterString() { return this->filterString; }
-    QString getreadableFilterString() { return this->readableFilterString; }
+    QString getReadableFilterString() { return this->readableFilterString; }
 
     bool getHasFilterBeenAdded() { return this->hasFilterBeenAdded; }
 

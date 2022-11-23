@@ -101,6 +101,12 @@ void MainWindow::on_pushButton_SaveFilter_clicked()
     out << "| " << filterName << " | " << currentDate.toString() << " | " << this->filterAlgo->getFilterString() << " |\n";
 
     ui->stackedWidget->setCurrentIndex(0);
+
+    ui->textEdit_ActualFilter->clear();
+    ui->textEdit_ReadableFilter->clear();
+
+    ui->textEdit_ActualFilter->appendPlainText(this->filterAlgo->getFilterString());
+    ui->textEdit_ReadableFilter->appendPlainText(this->filterAlgo->getReadableFilterString());
 }
 // --------------------------------------------
 
@@ -234,7 +240,7 @@ void MainWindow::createFiltersUpdateFilter()
     this->filterAlgo->filterStart();
 
     ui->textEdit_FilterPreview->clear();
-    ui->textEdit_FilterPreview->insertPlainText(this->filterAlgo->getreadableFilterString() + "\n\n" + this->filterAlgo->getFilterString());
+    ui->textEdit_FilterPreview->insertPlainText(this->filterAlgo->getReadableFilterString() + "\n\n" + this->filterAlgo->getFilterString());
 
     ui->combo_ColumnHeader->setCurrentIndex(-1);
     createFiltersDisableAll();
