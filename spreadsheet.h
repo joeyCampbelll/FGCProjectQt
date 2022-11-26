@@ -32,8 +32,6 @@ private:
     int rowCount = 0;
     int colCount = 0;
     QVector<QString> headers;
-
-
 };
 
 #endif // SPREADSHEET_H

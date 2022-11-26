@@ -18,6 +18,7 @@ SOURCES += \
 
 HEADERS += \
     filterAlgo.h \
+    filterhistory.h \
     mainwindow.h \
     spreadsheet.h
 

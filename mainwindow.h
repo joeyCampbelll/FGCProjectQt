@@ -7,6 +7,7 @@
 #include <QStandardItemModel>
 #include "spreadsheet.h"
 #include "filterAlgo.h"
+#include "filterhistory.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -79,6 +80,7 @@ private:
     Spreadsheet *spreadsheet;
     FilterAlgo *filterAlgo;
     FilterFinal *filterFinal;
+    FilterHistory *filterHistory;
     QStandardItemModel *spreadsheetTableModel;
 
     void buildSpreadsheet();

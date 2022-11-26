@@ -11,7 +11,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     // BUILD SPREADSHEET - this code is in spreadsheet.cpp for organization
     this->buildSpreadsheet();
-
 }
 
 MainWindow::~MainWindow()
