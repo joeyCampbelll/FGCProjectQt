@@ -3,3 +3,6 @@
 | name search | Tue Nov 22 2022 | =FILTER(A2:Y161, (G2:G161 = "joey"), "") |
 | last name | Tue Nov 22 2022 | =FILTER(A2:Y161, (E2:E161 = "asdf"), "") |
 | testlongfilter | Fri Nov 25 2022 | =FILTER(A2:Y161, (G2:G161 = "yum") * (E2:E161 = "asdf") * (I2:I161 < 1), "") |
+| MICS/Nursing/F | Sun Nov 27 2022 | =FILTER(A2:Y161, ((H2:H161 = "MICS") + (H2:H161 = "Nursing")) * (K2:K161 = "F"), "") |
+| MICS/F | Sun Nov 27 2022 | =FILTER(A2:Y161, (H2:H161 = "MICS") * (K2:K161 = "F"), "") |
+| MICS | Sun Nov 27 2022 | =FILTER(A2:Y161, (H2:H161 = "MICS"), "") |
