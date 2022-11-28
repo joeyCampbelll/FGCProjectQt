@@ -76,11 +76,15 @@ void Spreadsheet::getProperties()
     }
 }
 
+// --- DEBUGGING ---
 void Spreadsheet::printProperties()
 {
     qDebug() << this->rowCount << Qt::endl << this->colCount;
 }
+// ----------------
 
+
+// --- UTILITY METHODS ---
 int Spreadsheet::getColumnIndex(QString headerName)
 {
     return this->headers.indexOf(headerName);
@@ -104,3 +108,4 @@ QString Spreadsheet::headerToExcelLetter(QString headerName)
 {
     return intToExcelLetter(getColumnIndex(headerName));
 }
+// -----------------------

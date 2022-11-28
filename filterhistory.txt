@@ -6,3 +6,4 @@
 | MICS/Nursing/F | Sun Nov 27 2022 | =FILTER(A2:Y161, ((H2:H161 = "MICS") + (H2:H161 = "Nursing")) * (K2:K161 = "F"), "") |
 | MICS/F | Sun Nov 27 2022 | =FILTER(A2:Y161, (H2:H161 = "MICS") * (K2:K161 = "F"), "") |
 | MICS | Sun Nov 27 2022 | =FILTER(A2:Y161, (H2:H161 = "MICS"), "") |
+| wqhate | Sun Nov 27 2022 | =FILTER(A2:Y161, ((H2:H161 = "Nursing") + (H2:H161 = "MICS")) * (L2:L161 < 15) * (K2:K161 = "F"), "") |
