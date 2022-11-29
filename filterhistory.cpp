@@ -3,7 +3,7 @@
 #include "filterhistory.h"
 void MainWindow::on_pushButton_FilterHistory_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+    ui->stackedWidget->setCurrentIndex(4);
 
     this->filterHistory = new FilterHistory();
 

@@ -75,6 +75,8 @@ private slots:
     // ----------------------------------
 
 
+    void on_pushButton_BackFromEditSpreadsheet_clicked();
+
 private:
     Ui::MainWindow *ui;
     Spreadsheet *spreadsheet;

@@ -6,30 +6,36 @@ Spreadsheet::Spreadsheet() {}
 
 void MainWindow::on_pushButton_SpeadsheetProperties_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(2);
 }
 
 void MainWindow::on_pushButton_BackToHome_clicked()
 {
+//    this->ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_pushButton_BackFromEditSpreadsheet_clicked()
+{
     this->ui->stackedWidget->setCurrentIndex(0);
 }
+
 
 void MainWindow::buildSpreadsheet()
 {
     this->spreadsheet = new Spreadsheet();
     this->spreadsheet->getProperties();
 
-    // creating model for spreadsheet tableview
-    this->spreadsheetTableModel = new QStandardItemModel(this->spreadsheet->getRowCount(),
-                                              this->spreadsheet->getColCount(),
-                                              this);
-    QVector<QString> tempVec = this->spreadsheet->getHeaders();
-    for (int i = 0; i < tempVec.length(); i++)
-    {
-        this->spreadsheetTableModel->setHorizontalHeaderItem(i, new QStandardItem(tempVec.at(i)));
-    }
+//    // creating model for spreadsheet tableview
+//    this->spreadsheetTableModel = new QStandardItemModel(this->spreadsheet->getRowCount(),
+//                                              this->spreadsheet->getColCount(),
+//                                              this);
+//    QVector<QString> tempVec = this->spreadsheet->getHeaders();
+//    for (int i = 0; i < tempVec.length(); i++)
+//    {
+//        this->spreadsheetTableModel->setHorizontalHeaderItem(i, new QStandardItem(tempVec.at(i)));
+//    }
 
-    ui->table_spreadsheet->setModel(this->spreadsheetTableModel);
+//    ui->table_spreadsheet->setModel(this->spreadsheetTableModel);
 }
 
 // This method accesses the spreadsheet.txt file and retrieves

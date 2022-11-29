@@ -6,7 +6,7 @@
 void MainWindow::on_pushButton_CreateFilters_clicked()
 {
     // first, set the stacked widget to the createfilters menu
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(3);
 
     // create a new filterAlgo instance
     this->filterAlgo = new FilterAlgo(this->spreadsheet);

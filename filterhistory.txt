@@ -9,3 +9,4 @@
 | wqhate | Sun Nov 27 2022 | =FILTER(A2:Y161, ((H2:H161 = "Nursing") + (H2:H161 = "MICS")) * (L2:L161 < 15) * (K2:K161 = "F"), "") |
 | Tenured/Nurse/10+service | Mon Nov 28 2022 | =FILTER(A2:Y161, (O2:O161 = "Y") * (N2:N161 > 9) * (H2:H161 = "Nursing"), "") |
 | asdf | Mon Nov 28 2022 | =FILTER(A2:Y161, (G2:G161 = "asdf"), "") |
+| asdf | Mon Nov 28 2022 | =FILTER(A2:Y161, (H2:H161 = "asdf"), "") |
