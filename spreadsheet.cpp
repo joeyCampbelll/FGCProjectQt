@@ -36,6 +36,20 @@ void MainWindow::buildSpreadsheet()
 //    }
 
 //    ui->table_spreadsheet->setModel(this->spreadsheetTableModel);
+    QString numOfCols = "# of Cols: ";
+    numOfCols.append(QString::number(this->spreadsheet->getColCount()));
+    this->ui->label_NumOfCols->setText(numOfCols);
+
+    this->ui->spinBox_NumOfRows->setValue(this->spreadsheet->getRowCount());
+
+    QVector<QString> tempVec = this->spreadsheet->getHeaders();
+    QString colHeaders = "";
+    for (int i = 0; i < tempVec.length(); i++)
+    {
+        colHeaders.append(tempVec[i] + "\n");
+    }
+
+    this->ui->textEdit_ColEdit->insertPlainText(colHeaders);
 }
 
 // This method accesses the spreadsheet.txt file and retrieves
